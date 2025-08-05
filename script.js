@@ -22,15 +22,16 @@ function addTask(){
     li.appendChild(span);
     span.classList.add("span");
   }
+  input.value = "";
   saveList();
 }
 
 listContainer.addEventListener("click", function(e){
-    if(e.target.className == "list-task"){
+    if(e.target.classList.contains("list-task")){
         e.target.classList.toggle("checked");
         saveList();
     }
-    else if(e.target.className == "span"){
+    else if(e.target.classList.contains("span")){
         e.target.parentElement.remove();
         saveList();
     }
